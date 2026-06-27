@@ -1,0 +1,19 @@
+{
+  "base_size": 200,
+  "animation_fps": 40,
+  "brightness_step": 5,
+  "llm_provider": "gemini",
+  "api_key": "",
+  "model": "gemini-2.5-flash-lite",
+  "show_network_speed": true,
+  "todo_panel_visible": false,
+  "enable_fullscreen_auto_hide": true,
+  "network_smoothing_samples": 3,
+  "last_fortune_date": "",
+  "last_fortune_result": null,
+  "animation_dirs": {
+    "idle": "idle",
+    "interact": "interact",
+    "scroll": "scroll"
+  }
+}

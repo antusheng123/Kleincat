@@ -1,0 +1,35 @@
+功能：
+
+1、显示网速，这个很好，我喜欢！
+
+2、悬浮便利贴，这个也很好，最好能实现成那种写每日计划的，做完一条划掉一条那种。
+
+3、滚轮调节屏幕亮度
+
+4、在我打游戏（我一般玩那种全屏游戏）时候，能隐藏的，或者我主动选择让其隐藏的功能，可以调整大小。
+
+
+待机2D chibi black cat sitting, seamless loop, idle breathing animation, blinking eyes. Extreme wide shot, character heavily zoomed out, perfectly centered with massive clear empty margins on left and right sides. The cat's tail is tucked close to its body, wagging slowly within a tight tiny range, never touching the screen borders. Static camera, steady shot.
+
+交互2D chibi black cat casting magic, raising one paw forward, head tilting slightly. The starting pose, camera distance, character size, and framing are 100% identical to the static idle cat sitting pose. Extreme wide shot, perfectly centered with massive clear empty margins on left and right sides. No dramatic camera movement, steady shot.
+
+滚轮反馈动画 2D chibi black cat ears twitching, quick responsive action. The starting pose, camera distance, character size, and framing are 100% identical to the static idle cat sitting pose. Extreme wide shot, perfectly centered with massive clear empty margins on left and right sides. No dramatic camera movement, steady shot.
+
+
+Hi Codex! 
+
+我已经为你准备好了项目所需的全部工业级视觉资产。目前，所有的视频已经通过GPT给出的算法完美剥离了纯黑背景，并剪裁成了 1:1 的正方形透明 PNG 序列帧。
+
+资产的具体存放路径和帧数规则如下：
+1. 待机动画：存放于 C:\Users\admin\Desktop\pet\idle 目录下，文件名为 frame_0000.png, frame_0001.png ...
+2. 交互动画：存放于 C:\Users\admin\Desktop\pet\interact 目录下，文件名为 frame_0000.png, frame_0001.png ...
+3. 滚轮反馈：存放于 C:\Users\admin\Desktop\pet\scroll 目录下，文件名为 frame_0000.png, frame_0001.png ...
+
+请你严格根据我附件中提供的《KleinCatPet_Project_Summary》架构规范，开始为我构建整个项目的核心代码。
+
+【重要技术提示】：
+1. 动画加载：由于资产是 PNG 序列帧，请在 modules/window.py 中使用 QTimer 定时器来高效率刷新 QPixmap，不要使用 QMovie。
+2. 尺寸锁死：在切换不同动画状态时，请确保使用 .scaled(200, 200, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation) 强行让三组动画的小猫在物理窗口中保持完全一致的 200x200 视窗大小，绝对避免忽大忽小。
+3. 多线程安全：LLM 的 API 请求必须走 QThread 异步通道，收到 JSON 后再通过信号（Signal）传回主线程。
+
+请首先为我生成核心的目录结构中的 `main.py` 以及最关键的桌宠主窗口 `modules/window.py` 代码，让我们开始吧！

@@ -1,0 +1,5 @@
+PyQt6==6.6.1
+PyQt6-Qt6==6.6.1
+psutil>=5.9.0
+screen-brightness-control>=0.22.0
+pywin32>=306; platform_system == "Windows"
